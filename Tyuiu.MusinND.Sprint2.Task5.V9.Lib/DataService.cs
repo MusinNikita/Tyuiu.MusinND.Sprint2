@@ -21,7 +21,7 @@ namespace Tyuiu.MusinND.Sprint2.Task5.V9.Lib
                     daysInMonth = 31;
                     break;
                 case 4:
-                case 6:
+                case 6: 
                 case 9:
                 case 11:
                     daysInMonth = 30;
