@@ -18,7 +18,8 @@ namespace Tyuiu.MusinND.Sprint2.Task5.V9.Lib
                 case 5:
                 case 7:
                 case 8:
-                case 10: // Месяцы с 31 днем
+                case 10:
+                case 12: // Месяцы с 31 днем
                     daysInMonth = 31;
                     break;
                 case 4:
@@ -51,8 +52,8 @@ namespace Tyuiu.MusinND.Sprint2.Task5.V9.Lib
                 nextMonth = 1;
             }
 
-            // Возвращаем строку в формате "день.месяц"
-            return $"{nextDay}.{nextMonth}";
+            // Возвращаем строку в формате "дд.мм" с ведущими нулями
+            return $"{nextDay:D2}.{nextMonth:D2}";
         }
     }
 }
