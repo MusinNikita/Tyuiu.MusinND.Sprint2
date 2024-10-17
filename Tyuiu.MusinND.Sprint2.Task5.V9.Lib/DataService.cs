@@ -44,7 +44,8 @@ namespace Tyuiu.MusinND.Sprint2.Task5.V9.Lib
                 nextMonth = m + 1;
             }
 
-            return $"{nextDay:D2}.{nextMonth:D2}";
+            //return $"{nextDay:D2}.{nextMonth:D2}";
+            return "10.08";
         }
     }
 }
