@@ -9,6 +9,7 @@ namespace Tyuiu.MusinND.Sprint2.Task5.V9.Lib
             int nextDay = n;
             int nextMonth = m;
 
+            // Определение количества дней в месяце через switch
             int daysInMonth = 0;
             switch (m)
             {
@@ -17,24 +18,20 @@ namespace Tyuiu.MusinND.Sprint2.Task5.V9.Lib
                 case 5:
                 case 7:
                 case 8:
-                case 10:
+                case 10: // Месяцы с 31 днем
                     daysInMonth = 31;
                     break;
                 case 4:
-                case 6: 
+                case 6:
                 case 9:
-                case 11:
+                case 11: // Месяцы с 30 днями
                     daysInMonth = 30;
                     break;
-                case 2:
+                case 2: // Февраль (для простоты — 28 дней)
                     daysInMonth = 28;
                     break;
-                case 12:
-                    daysInMonth = 31;
-                    break;
                 default:
-                    Console.WriteLine("Некорректный месяц.");
-                    return;
+                    return "Некорректный номер месяца.";
             }
 
             // Вычисление следующего дня
@@ -44,9 +41,18 @@ namespace Tyuiu.MusinND.Sprint2.Task5.V9.Lib
             }
             else
             {
-                nextDay = 1; // Переход на 1-е число следующего месяца
+                nextDay = 1;
                 nextMonth = m + 1;
             }
+
+            // Проверка выхода за пределы 12 месяцев
+            if (nextMonth > 12)
+            {
+                nextMonth = 1;
+            }
+
+            // Возвращаем строку в формате "день.месяц"
+            return $"{nextDay}.{nextMonth}";
         }
     }
 }
